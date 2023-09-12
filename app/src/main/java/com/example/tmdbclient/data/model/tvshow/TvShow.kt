@@ -1,10 +1,14 @@
-package com.example.tmdbclient.data
+package com.example.tmdbclient.data.model.tvshow
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "popular_tvShows")
 data class TvShow(
 
+    @PrimaryKey
     @SerializedName("first_air_date")
     val firstAirDate: String?,
     @SerializedName("id")
