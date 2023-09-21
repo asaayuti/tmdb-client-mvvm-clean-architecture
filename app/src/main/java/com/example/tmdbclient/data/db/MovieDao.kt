@@ -1,7 +1,6 @@
 package com.example.tmdbclient.data.db
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -16,6 +15,6 @@ interface MovieDao {
     @Query("DELETE FROM popular_movies")
     suspend fun deleteAllMovies()
 
-    @Query("SELECT * FROM POPULAR_MOVIES")
+    @Query("SELECT * FROM popular_movies")
     suspend fun getMovies(): List<Movie>
 }
