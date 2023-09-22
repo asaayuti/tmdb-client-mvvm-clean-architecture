@@ -10,11 +10,11 @@ import com.example.tmdbclient.data.model.movie.Movie
 interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveMovies(movies: List<Movie>)
+    suspend fun saveMovies(movies: List<Movie>)
 
     @Query("DELETE FROM popular_movies")
-    fun deleteAllMovies()
+    suspend fun deleteAllMovies()
 
     @Query("SELECT * FROM popular_movies")
-    fun getMovies(): List<Movie>
+    suspend fun getMovies(): List<Movie>
 }
