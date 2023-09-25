@@ -34,22 +34,22 @@ class MovieActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.movieRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.rcMovie.layoutManager = LinearLayoutManager(this)
         adapter = MovieAdapter()
-        binding.movieRecyclerView.adapter = adapter
+        binding.rcMovie.adapter = adapter
         displayPopularMovies()
     }
 
     private fun displayPopularMovies() {
-        binding.movieProgressBar.visibility = View.VISIBLE
+        binding.pbMovie.visibility = View.VISIBLE
         val responseLiveData = movieViewModel.getMovies()
         responseLiveData.observe(this) {
             if (it != null) {
                 adapter.setList(it)
                 adapter.notifyDataSetChanged()
-                binding.movieProgressBar.visibility = View.GONE
+                binding.pbMovie.visibility = View.GONE
             } else {
-                binding.movieProgressBar.visibility = View.GONE
+                binding.pbMovie.visibility = View.GONE
                 Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show()
             }
         }
@@ -73,15 +73,15 @@ class MovieActivity : AppCompatActivity() {
     }
 
     private fun updateMovies() {
-        binding.movieProgressBar.visibility = View.VISIBLE
+        binding.pbMovie.visibility = View.VISIBLE
         val response = movieViewModel.updateMovies()
         response.observe(this) {
             if (it != null) {
                 adapter.setList(it)
                 adapter.notifyDataSetChanged()
-                binding.movieProgressBar.visibility = View.GONE
+                binding.pbMovie.visibility = View.GONE
             } else {
-                binding.movieProgressBar.visibility = View.GONE
+                binding.pbMovie.visibility = View.GONE
             }
         }
     }
