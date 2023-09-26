@@ -52,6 +52,7 @@ dependencies {
     val retrofit_version = "2.9.0"
     val interceptor_version = "4.11.0"
     val glide_version = "4.16.0"
+    val arch_version = "2.2.0"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -89,6 +90,19 @@ dependencies {
 
 
     testImplementation("junit:junit:4.13.2")
+    // optional - Test helpers for LiveData
+    testImplementation("androidx.arch.core:core-testing:$arch_version")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version")
+    testImplementation("com.google.truth:truth:1.1.4")
+    testImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    androidTestImplementation("junit:junit:4.13.2")
+    // optional - Test helpers for LiveData
+    androidTestImplementation("androidx.arch.core:core-testing:$arch_version")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version")
+    androidTestImplementation("com.google.truth:truth:1.1.4")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
 }
