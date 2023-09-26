@@ -45,6 +45,9 @@ android {
 
 dependencies {
 
+    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.12")
     val lifecycle_version = "2.6.2"
     val room_version = "2.5.2"
     val coroutines_version = "1.7.3"
@@ -90,12 +93,12 @@ dependencies {
 
 
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.robolectric:robolectric:4.10.3")
     // optional - Test helpers for LiveData
     testImplementation("androidx.arch.core:core-testing:$arch_version")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version")
     testImplementation("com.google.truth:truth:1.1.4")
     testImplementation("androidx.test.ext:junit:1.1.5")
-    testImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     androidTestImplementation("junit:junit:4.13.2")
     // optional - Test helpers for LiveData
